@@ -4,9 +4,9 @@ import { ReferenciasMaterialModule } from '../shared/modulos/referencias-materia
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,
+  imports: [
     ReferenciasMaterialModule,
-
+    RouterOutlet
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

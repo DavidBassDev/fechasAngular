@@ -1,23 +1,23 @@
 <mat-toolbar>
     <div class="barraTituloCRUD">
-        Fechasas festivas Colombia
+        Fechas festivas Colombia
     </div>
 </mat-toolbar>
 
 <div>
     <mat-form-field appearance="fill">
-        <mat-label>Buscar</mat-label>
-        <input matInput [(ngModel)]="textoBusqueda">
+        <mat-label>Buscar año</mat-label>
+        <input matInput [(ngModel)]="busquedaYear">
     </mat-form-field>
-    <button mat-stroked-button color="primary" (click)="buscar()">Buscar</button>
+    
+    <button mat-stroked-button color="primary" (click)="listarFestivos()">Buscar festivos año</button>
 </div>
 
 <div>
     <button mat-raised-button color="primary" (click)="agregar()">Agregar</button>
+     <button mat-raised-button color="accent" (click)="modificar()">Modificar</button>
     <button mat-raised-button color="warn" (click)="eliminar()">Eliminar</button>
     <ngx-datatable class="dark" [rows]="festivos" [columns]="columnas" [columnMode]="modoColumna.force" [limit]="10"
-        [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'">
+        [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'"></ngx-datatable>
 
-
-    </ngx-datatable>
 </div>
