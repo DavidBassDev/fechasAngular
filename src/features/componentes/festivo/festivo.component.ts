@@ -40,6 +40,8 @@ export class FestivoComponent implements OnInit {
     }
   ];
 
+  public modoColumna = ColumnMode;
+
 
 constructor(private festivoServicio: FestivoService,
     public dialogoServicio: MatDialog,
@@ -51,7 +53,7 @@ constructor(private festivoServicio: FestivoService,
 
     
   public listarFestivos () {
-    this.festivoServicio.listarFestivos(2025).subscribe({
+    this.festivoServicio.listarFestivos(2020).subscribe({
       next: (response) => {
         this.festivos = response;
       },
@@ -60,5 +62,9 @@ constructor(private festivoServicio: FestivoService,
       }
     });
   }
+
+  public agregar () {}
+  public modificar () {}
+  public eliminar () {}
 
 }
