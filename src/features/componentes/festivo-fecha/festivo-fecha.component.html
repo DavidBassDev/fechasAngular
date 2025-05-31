@@ -1,8 +1,10 @@
+<br>
 <mat-toolbar>
   <div class="barraTituloCRUD">
     Validar si fecha es festiva
   </div>
 </mat-toolbar>
+<br>
 
 <div>
   <mat-form-field appearance="fill">
@@ -11,12 +13,8 @@
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
-
+   <br>
   <button mat-stroked-button color="primary" (click)="comprobarFecha()">Validar si es festivo</button>
 </div>
 
-<div>
-  <ngx-datatable class="dark" [rows]="festivos" [columns]="columnas" [columnMode]="modoColumna.force" [limit]="10"
-    [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'">
-  </ngx-datatable>
-</div>
+

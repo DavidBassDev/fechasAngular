@@ -45,7 +45,7 @@ constructor(private festivoServicio: FestivoService,
     
   public listarFestivos(): void {
     if (!this.busquedaYear) {
-      alert('Por favor, ingresa un año válido');
+
       return;
     }
   
@@ -54,7 +54,7 @@ constructor(private festivoServicio: FestivoService,
         this.festivos = response;
       },
       error: (error) => {
-        console.error('Error al obtener festivos:', error);
+       
         alert('No se pudo obtener los festivos');
       }
     });
