@@ -49,7 +49,7 @@ constructor(private festivoServicio: FestivoService,
 
   ) { }
   ngOnInit(): void {
-    this.comprobarFecha();
+   /* this.comprobarFecha();*/
   } 
 
     
@@ -72,13 +72,14 @@ comprobarFecha() {
 
   this.festivoServicio.comprobarFecha(this.fechaIngresada).subscribe({
     next: (respuesta) => {
-      alert(respuesta);
+     window.alert(respuesta)
     },
-    error: (err) => {
-      console.error('Error al validar fecha:', err);
+    error: (error) => {
+      console.error('Error al validar fecha:', error);
       alert('Ocurrió un error al validar la fecha.');
     }
   });
+  
 }
 
   public agregar () {}

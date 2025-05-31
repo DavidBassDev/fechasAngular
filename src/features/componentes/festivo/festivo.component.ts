@@ -18,7 +18,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class FestivoComponent implements OnInit {
 
-  public busquedaYear : string = "";
+  public busquedaYear! : number;
   public festivos: Festivo[]=[];
 
 
@@ -52,16 +52,23 @@ constructor(private festivoServicio: FestivoService,
   } 
 
     
-  public listarFestivos () {
-    this.festivoServicio.listarFestivos(2020).subscribe({
+  public listarFestivos(): void {
+    if (!this.busquedaYear) {
+      alert('Por favor, ingresa un año válido');
+      return;
+    }
+  
+    this.festivoServicio.listarFestivos(this.busquedaYear).subscribe({
       next: (response) => {
         this.festivos = response;
       },
       error: (error) => {
-        window.alert(error.message);
+        console.error('Error al obtener festivos:', error);
+        alert('No se pudo obtener los festivos');
       }
     });
   }
+  
 
   public agregar () {}
   public modificar () {}

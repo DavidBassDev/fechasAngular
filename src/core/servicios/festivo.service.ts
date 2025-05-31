@@ -8,13 +8,28 @@ import { Festivo } from '../../shared/entidades/festivo';
   providedIn: 'root'
 })
 export class FestivoService {
+  fechaSeleccionada: Date | null = null;
    url:string ;
+ 
 
   constructor(private http: HttpClient) {
     this.url= `${environment.urlAPI}festivos/`
    }
 
-   public listarFestivos(year:number) : Observable<Festivo[]> {
-    return this.http.get<Festivo[]>(`${this.url}listarFestivos/${year}`);
-   }
+   public listarFestivos(year: number): Observable<Festivo[]> {
+    return this.http.post<Festivo[]>(`${this.url}listarFestivos/${ year }`,null);
+  }
+
+  public comprobarFecha(fechaIngresada: string): Observable<string> {
+    return this.http.post<string>(
+      `${this.url}comprobarFecha`,
+      fechaIngresada, // el string va directo en el body
+      { responseType: 'text' as 'json' } // para que Angular espere texto, no JSON
+    );
+  }
+  
+  
+  
+
+   
 }

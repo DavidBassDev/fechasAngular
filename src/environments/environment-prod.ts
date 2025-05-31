@@ -1,5 +1,5 @@
 export const environment = {
 
     production: true,
-    urlAPI: 'http://localhost:4200/api/'
+    urlAPI: 'http://localhost:8080/api/'
 }
