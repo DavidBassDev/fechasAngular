@@ -17,7 +17,7 @@ export class FestivoService {
    }
 
    public listarFestivos(year: number): Observable<Festivo[]> {
-    return this.http.post<Festivo[]>(`${this.url}listarFestivos/${ year }`,null);
+    return this.http.get<Festivo[]>(`${this.url}listarFestivos/${ year }`);
   }
 
   public comprobarFecha(fechaIngresada: string): Observable<string> {

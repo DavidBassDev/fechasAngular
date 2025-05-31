@@ -24,19 +24,10 @@ export class FestivoComponent implements OnInit {
 
   public columnas = [
     {
-      name: "Id", prop: "id"
-    },
-    {
       name: "Nombre", prop: "nombre"
     },
     {
-      name: "Dia", prop: "dia"
-    },
-    {
-      name: "Mes", prop: "mes"
-    },
-    {
-      name: "Tipo", prop: "idtipo"
+      name: "Fecha", prop: "fecha"
     }
   ];
 

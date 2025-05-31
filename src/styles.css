@@ -20,3 +20,5 @@
     align-items: center; /* Centrar verticalmente con flexbox */
     width: 100%; /* Ancho completo */
 }
+
+body{ margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
